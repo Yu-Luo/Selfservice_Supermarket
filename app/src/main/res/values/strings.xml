@@ -23,6 +23,12 @@
     <string name="title_activity_test2">test2Activity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
+    <string name="title_supermarket">超市</string>
+    <string name="title_goods">商品</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_register">Sign in</string>
+    <string name="title_activity_search_result">" "</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

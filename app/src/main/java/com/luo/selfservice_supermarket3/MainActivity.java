@@ -22,7 +22,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.luo.selfservice_supermarket3.Adapter.BottomNavigationViewHelper;
 import com.luo.selfservice_supermarket3.Adapter.ViewPagerAdapter;
@@ -40,7 +42,9 @@ public class MainActivity extends AppCompatActivity
 
     TextView login_t;
     View navHeaderView;
+    View app_bar_main;
     ImageView headimg;
+    SearchView searchView;
     public static MainActivity mactivity;
     public static Context mContext;
     static User user= new User(null,null,null);
@@ -161,6 +165,15 @@ public class MainActivity extends AppCompatActivity
     private void initView(){
         login_t = (TextView) navHeaderView.findViewById(R.id.login_t);
         headimg = (ImageView) navHeaderView.findViewById(R.id.headimage);
+        app_bar_main = (View)findViewById(R.id.main1);
+        searchView = app_bar_main.findViewById(R.id.search_main);
+/*
+        int imgId = searchView.getContext().getResources().getIdentifier("android:id/search_mag_icon",null,null);
+        ImageView searchButton = (ImageView)searchView.findViewById(imgId);
+        searchButton.setImageResource(R.drawable.ic_search_black_24dp);
+        searchView.setIconifiedByDefault(false);
+*/
+
     }
 
     private void initEvent() {
@@ -177,6 +190,20 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+       searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Toast.makeText(MainActivity.this,query,Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, SearchResultActivity.class);
+                startActivity(intent);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
     }
 
     public Bitmap getBitmap(String path) throws IOException {

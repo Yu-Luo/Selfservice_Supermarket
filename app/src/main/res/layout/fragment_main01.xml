@@ -28,17 +28,6 @@
             android:elevation="5dp"
             android:text="test3" />
 
-        <ImageView
-            android:id="@+id/headimage2"
-            android:layout_width="wrap_content"
-            android:layout_height="95dp"
-            android:adjustViewBounds="false"
-            android:background="@android:color/background_light"
-            android:elevation="5dp"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/supermarket_default"
-            app:srcCompat="@mipmap/ic_launcher" />
-
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
@@ -51,6 +40,25 @@
             android:text="TextView"
             android:textColor="@android:color/background_light"
             android:textSize="24sp" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/headimage2"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:adjustViewBounds="false"
+                android:background="@android:color/background_light"
+                android:elevation="5dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/supermarket_default"
+                app:srcCompat="@mipmap/ic_launcher" />
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
